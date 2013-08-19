@@ -1,0 +1,178 @@
+#Tags---Pattern---Description
+
+TM-UNICODE---[®™]---Unicode Characters
+CD---^[~#]?[\-]?(\d+\.?\d*|\.\d+)$--- Cardinal Digits
+CD---^[\-±\+]?\d+(\.?\d)*x?\d+([\-±\+/\^]*\d+(\.\d)?)*+$---Unparsed equations that sometimes are passed off as CD (to avoid them being marked up as NN or Oscar-CM)
+CD---(^[~]?[\-]?(\d+\.)?\d+[\-|±][\-]?(\d+\.)?\d+)---non-year range numbers;
+CD---half|third|quarter|fifth|sixth|seventh|eigth|ninth|tenth---misc
+
+DT-THE---^the$---The determiner 'THE';
+
+NNP-LABEL---^Fig\.|(Table|Figure|Chart|Diagram|Illustration|Graph|Schematic)(s)?$---;
+
+# Prepositions
+IN-AS---^as$---The preposition 'AS'
+IN-BEFORE---^before$---The preposition 'BEFORE'
+IN-AFTER---^after$---The preposition 'AFTER'
+IN-IN---^in$---The preposition 'IN'
+IN-INTO---^into$---The preposition 'IN'
+IN-WITH---^with$---The preposition 'WITH'
+IN-WITHOUT---^without$---The preposition 'WITHOUT'
+IN-BY---^by$---The preposition 'BY'
+IN-VIA---^via$---The preposition 'VIA'
+IN-OF---^of$---The preposition 'OF'
+IN-ON---^on$---The preposition 'ON'
+IN-FOR---^for$---The preposition 'FOR'
+IN-FROM---^from$---The preposition 'FROM'
+IN-UNDER---^under$---The preposition 'UNDER'
+IN-OVER---^over$---The preposition 'UNDER'
+IN-OFF---^off$---The preposition 'OFF'
+TO---^to$---The preposition 'TO'
+
+#Foreign Words
+FW---^et[.]?$|^al[.]?$
+#Nouns
+NN---^wt\.$---Weight
+NN-STATE---powder|foam|glass|liquid|oil|solid|gas|syrup|crystal|gum|needle|prisms|dust---Physical States
+NN-TIME---^period[s]?$|^min(utes|s|\.)?$|^hour[s]?|^month[s]?|^week(s|end)?$|^sec(ond)?s$|^d$|^(?-i:h)$|^day[s]?$|^(fort|over)?night(s|falls|long)?$|^hr[s]?$|^time$---Time Token
+#In cases where the number directly precedes the quantity the Formatter will insert a space
+NN-MASS---^([mkµu]?(g|gram[m]?[e]?)|(pico|nano|micro|milli|centi|deci|kilo|mega)gram[m]?[e]?)[s]?$---Grams
+NN-AMOUNT---^([mnµu]|pico|nano|micro|milli)?mol[e]?[s]?$---Mols (hopefully animal moles will not occur in chemistry)
+NN-MOLAR---^([mnµu]?(?-i:M)|(?-i:N)|(pico|nano|micro|milli|[mnµu])?molar)$---Molar
+NN-ATMOSPHERE---atmosphere[s]?$---Atmosphere
+NN-EQ---^([m]?eq[.]?|(pico|nano|micro|milli|centi|deci|kilo|mega)?equiv(alent[s]?|\.)?)$---Equivalence
+NN-VOL---^([mkµu]?l|[cd]?m[\^]?3|(µ|pico|nano|micro|milli|centi|deci|kilo|mega)?lit(re|er|\.)[s]?)$---Volume
+NN-VOL---^drop[s]?$---Volume
+NN-CHEMENTITY---^(adduct|by[\-]?product|catalyst|compound|complex[e]?|elu[ae]nt|gel|ice|generator|initiator|intermediate|ligand|macroinitiator|material|metal|monomer|nanotube|oligomer|petroleum|phase|plug|(co)?polymer|product|reactant|reagent|residue|resin|retrievals|salt|septum|sol(\.|ution)|solvent)[s]?$|layer[s]?$|.+®---Chemical entities not marked up by OSCAR
+NN-TEMP---(o|°|º)[cCfF]\.?$|room$|temperature$|^rt$|^RT$|^deg$|^degrees$|^celsius$|^fahrenheit$|^kelvin$---Temperature Token
+NN-TEMP---^(?-i:K)$---Temperature Token
+NN-PH---^ph$---pH Token
+NN-FLASH---^flash$---Flash
+NN-GENERAL---^general$---General term
+NN-METHOD---^(instructions|procedure|technique|method|scheme|step|stage)[s]?$---Method token       
+NN-PRESSURE---^pressure$---Pressure Token
+NN-COLUMN---^(c|C)?olumn$---Column Token 
+NN-CHROMATOGRAPHY---^(c|C)?hromatography$---Chromatography Token 
+NN-VACUUM---^(v|V)?acuum$|^(v|V)?acuo$---Vacuum Token                   
+NN-CYCLE---^(c|C)?ycle(s)?$---Column Token                    
+NN-TIMES---^times$---Times Token
+NN-EXAMPLE---^example[s]?$---Example Token
+NN-IDENTIFIER---^(X{2,3}(IX|IV|V?I{0,3})|II|III|IV|VI|VII|VIII|IX|XI|XII|XIII|XIV|XV|XVI|XVII|XVIII|XIX)$---Non words that are believed to be identifiers. Single letter roman digits are assigned by PostProcessTags
+NN-IDENTIFIER---^(\d+[a-z]\-\d*[a-z])$---Identifiers for a range of compounds e.g. 12a-12e or 12a-e
+NN-IDENTIFIER---^\d+\.(\d+[.]?[a-z]|[a-z])$---e.g. 4.3a or 4.3.a or 4.b
+NN-IDENTIFIER---^[a-f]\d$---e.g. A2, B3 etc.
+NN-IDENTIFIER---^\d+\(([a-z]|X{2,3}(IX|IV|V?I{0,3})|II|III|IV|VI|VII|VIII|IX|XI|XII|XIII|XIV|XV|XVI|XVII|XVIII|XIX)\)$---e.g. 81(d) or 3(iii)
+NN-IDENTIFIER---^[a-z]\.$---e.g. a. , b.  etc.
+
+CD-ALPHANUM---^\d+[A-Za-z]$-----A number followed by a letter. Could be used as an anaphora
+
+#Verbs
+VB-USE---^using---Use Verb in the Present Term
+VB-CHANGE---^changed---Change Verb in the Present Term
+VB-SUBMERGE---^submerge(d)?$---Submerges verb
+VB-SUBJECT---^subject(ed)?---Subject Verb in past form
+
+#Adjective
+JJ---^round$|^bottom|^thaw$---Adjectives
+JJ---^(beige|brown|crimson|cyan|green|grey|magenta|orange|purple|violet|yellow)$---Colours that are assigned by openNLP as nouns. Some other colours that are often nouns are special cased by PostProcessTags
+JJ-CHEM---^acidic$|^conc[.]?$|^dil[.]?$|^Merrifield$|^crude$|^vicinal$|^buffer$|^mono$|^fritted$|^glacial$|^excess|amphiphilic$|functionalized$|pot$|^cyclic$|hyperbranched$|^insoluble$|Arm$|^star$|^anh(\.|ydrous)?$|^aq\.?$|^liq.$|^organic|^sat(\.|urated)$|^(Di|Tri|di|tri|poly)block$---Chemical Adjectives
+JJ-COMPOUND---^(desired|resultant|title[d]?|final|initial|aimed|expected|anticipated)$---Adjectives that define unnamed compound
+#Add Tokens
+NN-ADD---^addition$---Add Noun
+NN-MIXTURE---^mixture$|^suspension$---Mixture Noun
+VB-DILUTE---^(pre|re)?(dilut)(e|s|ed|ing)?$---Dilute Verb
+VB-ADD---^(pre|re)?(add|mix|pour|dispers|introduc)(e|s|ed|ing)?$---Add Verb
+VB-CHARGE---^charge(d)?$---Charge Verb
+VB-CONTAIN---^containing$---Contain Verb
+VB-DROP---^dropped?$---Drop Verb
+VB-FILL---^(re)?filled?$---Fill Verb
+VB-SUSPEND---(^suspend|^plac)(s|ed|ing|es)?$---Suspend Verb
+VB-TREAT---^treat(e|s|ed|ing)?$---Treat Verb
+                    
+#Apparatus Tokens
+VB-APPARATUS---(^equip|^seal|clos|^cap|^fitt)(ped|ed|e)?$---Apparatus Verb
+NN-APPARATUS---^rotavap$|^trap$|^neck$|^valve$|^adapter$|^inlet|^outlet|^condenser$|^stirrer$|^reactor$|^syringe$|^bath$|^oven$|^vessel$|^glove|^box$|^bar$|^tube$|^schlenk$|^flask(s)?$|^funnel?$|^desiccator(s)?$---Apparatus Nouns
+#Concentrate Tokens
+VB-CONCENTRATE---^(concentrat(ed|e|ing)?|saturat(e|ing)?)$---Concentrate Verb
+NN-CONCENTRATE---^concentration---Concentrate Noun
+
+#Cool Tokens
+VB-COOL---^(cool|chill|frozen)(ed|e|ing)?---Cool Verb
+
+#Degass Tokens
+VB-DEGASS---(de)?(gass|degas|oxginat|evacuat|under|purg|bubbl|flush)(ed|e|d|ing)?---Degass Verb
+
+#Dissolve Tokens
+VB-DISSOLVE---^(re)?dissolv(ed|e|ing)?---Dissolve Verb
+
+#Dry Tokens
+VB-DRY---^(freeze|re)?(-)?dr(y|ied|ying)?$---Dry Verb
+NN-DRY---^dryness$---Dry Noun
+#Extract Tokens
+VB-EXTRACT---^extract(ed|ing)?$---Extract Verb
+NN-EXTRACT---extraction---Extract Noun
+
+#Filter Tokens
+VB-FILTER---filter(ed|ing)?$|^filtrated$---Filter Verb
+NN-FILTER---filtration---Filter Noun
+
+#Heat Tokens
+VB-HEAT---(heat|warm|reflux|^flam|^maintain)(ed|ing|e)?$---Heat Verb
+VB-INCREASE---(increas|rais)(e|ed|ing)?---Increase Verb
+
+#Immerse Tokens
+VB-IMMERSE---^immersed$---Submerges verb
+
+#Partition Tokens
+VB-PARTITION---(partition|separat|split)(e|ed|ing|ting)?---Partition Verb
+
+#Precipitate Tokens
+#Disambiguation between precipitate as a noun and verb handled by PostProcessTags
+VB-PRECIPITATE---(re)?(precipitat(ed|ing|es)|crystall?i[zs](e|ed|ing)?(s)?)$---Precipitate Verb
+NN-PRECIPITATE---(re)?(precipitat|crystall?i[zs])(ation|ion)?(s)?$---Precipitate Noun
+
+#Purify Tokens
+
+VB-PURIFY---(re)?(purif|dialis|dialyz|dializ|distill|chromatographed)(ed|e|y|ied|ying|ing)?$---Purify Verb
+NN-PURIFY---(re)?(distill|purific|dialysis)(ation)?$---Purify Noun
+
+#Quench Tokens
+VB-QUENCH---(quench|terminat)(e|ed|ing)?$---Quench Verb
+
+#Recover Tokens
+VB-RECOVER---(recover|collect)(ed)?$---Recover Verb
+
+#Remove Tokens
+VB-REMOVE---(pre|re)?((decant|absorb|destroy)(s|es|ed|ing)?|(remov|consum|evaporat)(e|s|es|ed|ing)?|withdr(aw([ns]?|ing)?|ew)|azeotrop(ed|ing))$---Remove Verb
+NN-REMOVE---(pre|re)?(absor[bp]tion|destruction|removal|consumption|evaporation|evaporator)$---Remove Noun
+
+#Stir Tokens
+VB-STIR---(pre|re)?(stir)(red|ring)?---Stir Verb
+
+#Synthesize Tokens
+VB-SYNTHESIZE---(pre|re)?(react|synthesize|synthesise|polymerize|polymerise|prepare)(s|d|ed)?$---Synthesize Verb
+NN-SYNTHESIZE---(pre|re|co)?(hydrolysis|condens|synthesiz|synthesis|polymeris|polymeriz|prepar|reaction|^romp|^atrp)(ation|e|ed|ing)?$---Synthesize Noun
+
+#Wait Tokens
+VB-WAIT---(wait|left)(ing)?---Wait Verb
+
+#Wash Tokens
+VB-WASH---^(wash|elut|rins)(ed|e|ing)?---Wait Verb
+
+#Yield Tokens
+VB-YIELD---^((afford|furnish|obtain|result|yield)(s|es|ed|ing)?|(isolat|leav|provid)(e|s|es|ed|ing)?|(giv|produc)(e|es|ed|ing)|form(ed|ing)|gave|get)$---Yield Verb
+#form/forms can be noun or verb - corrected by PostProcessTags. left is a VB-WAIT
+
+#Misc Tokens mainly to replace characters that are not markup friendly
+RB---.*wise$|.*ly$---Adverbs like dropwise
+RB-CONJ---^there[a-z]+|indeed|moreover|^then$|^prior|subsequently$---Conjunctive adverbs like: Thereof, therefrom etc.
+COLON---^:---Colon           
+COMMA---^,---Comma           
+APOST---^'|^''$---Apostrophe          
+NEG---^not$---Negation
+DASH---^(\\|/|\-|\+)$---Dash
+STOP---^[.?!;]$---Full stops,SemiColons, Exclamation and Question Marks
+NN-PERCENT---^\%$---Percent Sign
+LSQB---^\[$---Left Square Brackets
+RSQB---^\]$---Right Square Brackets
+SYM---^[<>\u00d7]$---Symbols
